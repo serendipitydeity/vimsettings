@@ -1,87 +1,83 @@
-" Vim syntax file
-" Language:    Scala
-" Version:     0.1
-" Maintainer:  Raphael Haberer-Proust <raphael.haberer-proust at epfl.ch>
-" URL:		   http://diwww.epfl.ch/~haberer/syntax/scala.html
-" Last Change: 2004 April 18
-" Disclaimer:  It's an absolut basic, very simple and by far not finished
-" syntax file! It only recognizes basic keywords and  constructs like comments
-" any help is welcome
+" Vim indent file
+" Language   : Scala (http://scala-lang.org/)
+" Maintainer : Stefan Matthias Aust
+" Last Change: 2006 Apr 13
 
-" Remove any old syntax stuff
-syn clear
+if exists("b:did_indent")
+  finish
+endif
+let b:did_indent = 1
 
-" syntax highlighting for words that are not identifiers:
-" int unit double String Array byte short char long float
-syn keyword scalaExternal		import package
-syn keyword scalaConditional	if then else
-syn keyword scalaRepeat			while for do
-syn keyword scalaType			boolean int double byte short char long float
-syn keyword scalaType			unit
-syn keyword scalaType			val with type var yield
+setlocal indentexpr=GetScalaIndent()
 
-syn keyword scalaStatement		return
-syn keyword	scalaBoolean		true false
-syn keyword scalaConstant		null
-syn keyword	scalaTypedef		this super
-syn keyword scalaLangClass		String Array
-syn keyword scalaScopeDecl		private protected override
-syn keyword scalaStorageClass	abstract final sealed
-syn keyword	scalaExceptions		throw try catch finally
-syn keyword scalaClassDecl		extends
-" TODO differentiate the keyword class from MyClass.class -> use a match here
-syn keyword   scalaTypedef      class
-syn keyword   scalaTypedef      case
-syn keyword   scalaTypedef      trait
+setlocal indentkeys=0{,0},0),!^F,<>>,<CR>
 
-syn match   scalaTypedef		"\s*\<object\>"
+setlocal autoindent sw=2 et
 
-syn keyword	scalaOperator		new
-
-" same number definition as in java.vim
-syn match   scalaNumber		"\<\(0[0-7]*\|0[xX]\x\+\|\d\+\)[lL]\=\>"
-syn match   scalaNumber     "\(\<\d\+\.\d*\|\.\d\+\)\([eE][-+]\=\d\+\)\=[fFdD]\="
-syn match   scalaNumber     "\<\d\+[eE][-+]\=\d\+[fFdD]\=\>"
-syn match   scalaNumber     "\<\d\+\([eE][-+]\=\d\+\)\=[fFdD]\>"
-
-syn region  scalaString		start=+"+ end=+"+
-
-" Functions
-"	def [name] [(prototype)] {
-"
-syn match   scalaFunction	"\s*\<def\>"
-
-" Comments
-syn region scalaComment		start="/\*"	end="\*/"
-syn match	scalaLineComment	"//.*"
-
-
-if !exists("did_scala_syntax_inits")
-    let did_scala_syntax_inits = 1
-    
-    " The default methods for highlighting. Can be overridden later
-    hi link scalaExternal		Include
-    hi link scalaStatement		Statement
-    hi link scalaConditional	Conditional
-	hi link scalaRepeat			Repeat
-    hi link scalaType			Type
-    hi link scalaTypedef		Typedef
-	hi link	scalaBoolean		Boolean
-    hi link scalaFunction		Function
-    hi link scalaLangClass		Constant
-	hi link	scalaConstant		Constant
-	hi link scalaScopeDecl		scalaStorageClass
-	hi link scalaClassDecl		scalaStorageClass
-	hi link scalaStorageClass 	StorageClass
-	hi link scalaExceptions		Exception
-	hi link scalaOperator		Operator
-    hi link scalaNumber			Number
-    hi link scalaString			String
-	hi link	scalaComment		Comment
-	hi link	scalaLineComment	Comment
+if exists("*GetScalaIndent")
+  finish
 endif
 
-let b:current_syntax = "scala"
+function! CountParens(line)
+  let line = substitute(a:line, '"\(.\|\\"\)*"', '', 'g')
+  let open = substitute(line, '[^(]', '', 'g')
+  let close = substitute(line, '[^)]', '', 'g')
+  return strlen(open) - strlen(close)
+endfunction
 
-" if you want to override default methods for highlighting
-"hi Conditional	term=bold ctermfg=Cyan guifg=#80a0ff
+function! GetScalaIndent()
+  " Find a non-blank line above the current line.
+  let lnum = prevnonblank(v:lnum - 1)
+
+  " Hit the start of the file, use zero indent.
+  if lnum == 0
+    return 0
+  endif
+
+  let ind = indent(lnum)
+  let prevline = getline(lnum)
+
+  "Indent html literals
+  if prevline !~ '/>\s*$' && prevline =~ '^\s*<[a-zA-Z][^>]*>\s*$'
+    return ind + &shiftwidth
+  endif
+
+  " Add a 'shiftwidth' after lines that start a block
+  " If if, for or while end with ), this is a one-line block
+  " If val, var, def end with =, this is a one-line block
+  if prevline =~ '^\s*\(\<\(\(else\s\+\)\?if\|for\|while\)\>.*[)=]\|\<\(va[lr]\|def\)\>.*=\)\s*$'
+        \ || prevline =~ '^\s*\<else\>\s*$'
+        \ || prevline =~ '{\s*$'
+    let ind = ind + &shiftwidth
+  endif
+
+  " If parenthesis are unbalanced, indent or dedent
+  let c = CountParens(prevline)
+  echo c
+  if c > 0
+    let ind = ind + &shiftwidth
+  elseif c < 0
+    let ind = ind - &shiftwidth
+  endif
+  
+  " Dedent after if, for, while and val, var, def without block
+  let pprevline = getline(prevnonblank(lnum - 1))
+  if pprevline =~ '^\s*\(\<\(\(else\s\+\)\?if\|for\|while\)\>.*[)=]\|\<\(va[lr]\|def\)\>.*=\)\s*$'
+        \ || pprevline =~ '^\s*\<else\>\s*$'
+    let ind = ind - &shiftwidth
+  endif
+
+  " Align 'for' clauses nicely
+  if prevline =~ '^\s*\<for\> (.*;\s*$'
+    let ind = ind - &shiftwidth + 5
+  endif
+
+  " Subtract a 'shiftwidth' on '}' or html
+  let thisline = getline(v:lnum)
+  if thisline =~ '^\s*[})]' 
+        \ || thisline =~ '^\s*</[a-zA-Z][^>]*>'
+    let ind = ind - &shiftwidth
+  endif
+
+  return ind
+endfunction
