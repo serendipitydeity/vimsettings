@@ -12,6 +12,7 @@ set expandtab
 set cindent
 set smartindent
 set ruler
+set scrolloff=2
 if has ("mouse")
 	set mouse=a
 endif
