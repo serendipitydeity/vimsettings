@@ -13,9 +13,9 @@ set cindent
 set smartindent
 set ruler
 set scrolloff=2
-if has ("mouse")
-	set mouse=a
-endif
+"if has ("mouse")
+	"set mouse=a
+"endif
 set showmatch
 set showmode
 set esckeys
