@@ -1,3 +1,4 @@
+execute pathogen#infect()
 syntax on
 
 filetype indent on
@@ -13,13 +14,20 @@ set cindent
 set smartindent
 set ruler
 set scrolloff=2
-"if has ("mouse")
-	"set mouse=a
-"endif
+if has ("mouse")
+	set mouse=a
+endif
 set showmatch
 set showmode
 set esckeys
 set nocompatible
+
+au BufRead,BufNewFile *.pde set filetype=arduino
+au BufRead,BufNewFile *.ino set filetype=arduino
+
+augroup SetCMS
+  autocmd FileType play2-html let &l:commentstring='<!--%s-->'
+augroup END
 
 if &term =~ "xterm"
     let myterm = "xterm"
