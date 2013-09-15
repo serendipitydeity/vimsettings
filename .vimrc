@@ -22,14 +22,14 @@ set showmode
 set esckeys
 set nocompatible
 
-inoremap <Up> <NOP>
-vnoremap <Up> <NOP>
-inoremap <Down> <NOP>
-vnoremap <Down> <NOP>
-inoremap <Left> <NOP>
-vnoremap <Left> <NOP>
-noremap <Right> <NOP>
-vnoremap <Right> <NOP>
+map <Up> <NOP>
+map <Down> <NOP>
+map <Left> <NOP>
+map <Right> <NOP>
+imap <Up> <NOP>
+imap <Down> <NOP>
+imap <Left> <NOP>
+imap <Right> <NOP>
 
 au BufRead,BufNewFile *.pde set filetype=arduino
 au BufRead,BufNewFile *.ino set filetype=arduino
