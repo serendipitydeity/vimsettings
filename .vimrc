@@ -5,7 +5,6 @@ filetype indent on
 filetype plugin on
 set encoding=UTF-8
 set fileencodings=UTF-8
-set clipboard=unnamed
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
