@@ -53,3 +53,5 @@ set backspace=eol,start,indent
 set hlsearch
 set ai si
 set number
+
+cabbrev E Explore
