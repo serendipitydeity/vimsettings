@@ -49,3 +49,6 @@
 [submodule ".vim/bundle/html5-vim"]
 	path = .vim/bundle/html5-vim
 	url = https://github.com/othree/html5.vim.git
+[submodule ".vim/bundle/vim-handlebars"]
+	path = .vim/bundle/vim-handlebars
+	url = https://github.com/nono/vim-handlebars
