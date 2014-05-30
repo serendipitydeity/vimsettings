@@ -3,6 +3,8 @@ syntax on
 
 filetype indent on
 filetype plugin on
+let &titlestring=@%
+set title
 set encoding=UTF-8
 set fileencodings=UTF-8
 set tabstop=2
