@@ -42,5 +42,5 @@ if has("autocmd")
     \   exe "normal g`\"" | 
     \ endif 
 
-  autocmd BufEnter * let &titlestring = "vim :: " . expand("%:t")
+  autocmd BufEnter * let &titlestring = expand("%:t") . " :: vim"
 endif
