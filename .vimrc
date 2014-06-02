@@ -1,28 +1,27 @@
 execute pathogen#infect()
-syntax on
-
 filetype indent on
 filetype plugin on
-let &titlestring=@%
+syntax on
+
+set nocompatible
 set title
-set encoding=UTF-8
-set fileencodings=UTF-8
+set ruler
+set number
+set esckeys
+set hlsearch
+set showmode
+set showmatch
+set expandtab
 set tabstop=2
+set scrolloff=2
 set shiftwidth=2
 set softtabstop=2
-set expandtab
-set cindent
-set smartindent
-set ruler
-set scrolloff=2
-if has ("mouse")
-	set mouse=a
-endif
-set showmatch
-set showmode
-set esckeys
-set nocompatible
+set encoding=UTF-8
+set fileencodings=UTF-8
+set backspace=eol,start,indent
 
+map j gj
+map k gk
 map <Up> <NOP>
 map <Down> <NOP>
 map <Left> <NOP>
@@ -32,12 +31,7 @@ imap <Down> <NOP>
 imap <Left> <NOP>
 imap <Right> <NOP>
 
-au BufRead,BufNewFile *.pde set filetype=arduino
-au BufRead,BufNewFile *.ino set filetype=arduino
-
-augroup SetCMS
-  autocmd FileType play2-html let &l:commentstring='<!--%s-->'
-augroup END
+cabbrev E Explore
 
 if has("autocmd") 
   " When editing a file, always jump to the last known cursor position. 
@@ -47,13 +41,6 @@ if has("autocmd")
     \ if line("'\"") > 0 && line("'\"") <= line("$") | 
     \   exe "normal g`\"" | 
     \ endif 
- 
-endif " has("autocmd")
 
-" get easier to use and more user friendly vim defaults
-set backspace=eol,start,indent
-set hlsearch
-set ai si
-set number
-
-cabbrev E Explore
+  autocmd BufEnter * let &titlestring = "vim :: " . expand("%:t")
+endif
