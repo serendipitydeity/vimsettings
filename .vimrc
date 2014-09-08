@@ -22,6 +22,7 @@ set backspace=eol,start,indent
 
 map j gj
 map k gk
+
 map <Up> <NOP>
 map <Down> <NOP>
 map <Left> <NOP>
