@@ -52,3 +52,6 @@
 [submodule ".vim/bundle/grunt.vim"]
 	path = .vim/bundle/grunt.vim
 	url = https://github.com/mklabs/grunt.vim
+[submodule ".vim/bundle/vim-glsl"]
+	path = .vim/bundle/vim-glsl
+	url = https://github.com/tikhomirov/vim-glsl
