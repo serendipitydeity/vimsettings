@@ -3,6 +3,12 @@
 
 Run *./setup.sh* to install the plugins
 
+가끔 
+
+git submodule foreach git pull origin master
+
+를 통해서 서브모듈을 최신으로 맞춰주기
+
 **(The CoffeeScript / JavaScript indentation requires Vim 7.4)**
 
 
