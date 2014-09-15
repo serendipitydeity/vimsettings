@@ -23,14 +23,14 @@ set backspace=eol,start,indent
 map j gj
 map k gk
 
-map <Up> <NOP>
-map <Down> <NOP>
-map <Left> <NOP>
-map <Right> <NOP>
-imap <Up> <NOP>
-imap <Down> <NOP>
-imap <Left> <NOP>
-imap <Right> <NOP>
+"map <Up> <NOP>
+"map <Down> <NOP>
+"map <Left> <NOP>
+"map <Right> <NOP>
+"imap <Up> <NOP>
+"imap <Down> <NOP>
+"imap <Left> <NOP>
+"imap <Right> <NOP>
 
 cabbrev E Explore
 
