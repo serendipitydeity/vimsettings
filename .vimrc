@@ -22,7 +22,6 @@ set backspace=eol,start,indent
 
 map j gj
 map k gk
-
 "map <Up> <NOP>
 "map <Down> <NOP>
 "map <Left> <NOP>
@@ -31,6 +30,9 @@ map k gk
 "imap <Down> <NOP>
 "imap <Left> <NOP>
 "imap <Right> <NOP>
+
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 
 cabbrev E Explore
 
