@@ -47,3 +47,15 @@ if has("autocmd")
 
   autocmd BufEnter * let &titlestring = expand("%:t") . " :: vim"
 endif
+
+" python
+au Bufenter *.py map <F5> :!python %<CR>
+
+" c
+au Bufenter *.c map <F5> :!gcc % -lm && ./a.out<CR>
+
+" ruby
+au Bufenter *.rb map <F5> :!ruby %<CR>
+
+" js
+au Bufenter *.js map <F5> :!node %<CR> 
