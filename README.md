@@ -19,6 +19,7 @@ git submodule foreach git pull origin master
 3. **nerdcommenter** : 블럭을 설정한 후 "\ + c + space" 로 주석 처리 - 필수!
 4. **vim-snipmate** : inc(tab) => #include <stdio.h>, main(tab) => int main(int argc, const char * argv[])... 등등으로 IDE에서나 볼 수 있던 고급 auto-completion 기능을 vim에서도! (vim-snippets에 auto-completion 리스트가 있음)
 5. **syntastic** : 소스를 저장하면 대충 컴파일해봐서 어디에 신택스 에러가 있는지 보여줌. Visual Studio의 IntelliSense같은 기능
+6. **restore_view** : 마지막으로 있었던 커서의 위치와 fold 된 코드를 자동으로 저장해줌
 
 
 # Syntax Files
