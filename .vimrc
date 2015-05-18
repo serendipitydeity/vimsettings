@@ -1,7 +1,36 @@
-execute pathogen#infect()
-filetype indent on
-filetype plugin on
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'gmarik/Vundle.vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'scrooloose/syntastic'
+Plug 'kchmck/vim-coffee-script'
+Plug 'scrooloose/nerdcommenter'
+Plug 'groenewege/vim-less'
+Plug 'derekwyatt/vim-scala'
+Plug 'tpope/vim-haml'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
+Plug 'pangloss/vim-javascript'
+Plug 'garbas/vim-snipmate'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'honza/vim-snippets'
+Plug 'tpope/vim-surround'
+Plug 'othree/html5.vim'
+Plug 'nono/vim-handlebars'
+Plug 'mklabs/grunt.vim'
+Plug 'tikhomirov/vim-glsl'
+Plug 'scrooloose/nerdtree'
+Plug 'digitaltoad/vim-jade'
+Plug 'vim-scripts/restore_view.vim' 
+
+call plug#end() 
+
 syntax on
+filetype indent plugin on 
 
 set nocompatible
 set title

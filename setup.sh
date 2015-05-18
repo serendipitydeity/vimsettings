@@ -1,9 +1,12 @@
 #/bin/bash
 
 echo "This script replaces the current vim settings!"
-git submodule init
-git submodule update
+
 rm -rf ~/.vimrc
 rm -rf ~/.vim/
-cp -R .vim ~/
-cp -R .vimrc ~/
+cp .vimrc ~/
+
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim 
+
+vim +PlugInstall +qall 
