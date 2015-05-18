@@ -1,6 +1,3 @@
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-
 call plug#begin('~/.vim/plugged')
 
 Plug 'gmarik/Vundle.vim'
@@ -31,7 +28,6 @@ call plug#end()
 
 syntax on
 filetype indent plugin on 
-
 set nocompatible
 set title
 set ruler
