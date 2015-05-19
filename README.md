@@ -31,3 +31,4 @@ Run *./setup.sh* to install the plugins
 1. **tlib_vim** : Snipmate에 필요
 2. **vim-addon-mw-utils** : Snipmate에 필요
 3. **vim-snippets** : Snipmate에서 사용하는 snippets파일들
+4. **tidy5** : Syntastic 에서 HTML5 syntax checking 할 때 필요 - https://github.com/htacg/tidy-html5

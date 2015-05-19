@@ -55,6 +55,7 @@ map k gk
 "imap <Left> <NOP>
 "imap <Right> <NOP>
 
+let g:syntastic_html_tidy_exec = 'tidy5'
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 
