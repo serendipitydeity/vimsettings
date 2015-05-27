@@ -21,7 +21,6 @@ Plug 'mklabs/grunt.vim'
 Plug 'tikhomirov/vim-glsl'
 Plug 'scrooloose/nerdtree'
 Plug 'digitaltoad/vim-jade'
-Plug 'vim-scripts/restore_view.vim' 
 
 call plug#end() 
 
