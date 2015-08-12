@@ -21,6 +21,8 @@ Plug 'mklabs/grunt.vim'
 Plug 'tikhomirov/vim-glsl'
 Plug 'scrooloose/nerdtree'
 Plug 'digitaltoad/vim-jade'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 
 call plug#end() 
 
@@ -35,6 +37,7 @@ set hlsearch
 set showmode
 set showmatch
 set expandtab
+set linebreak
 set tabstop=2
 set scrolloff=2
 set shiftwidth=2
@@ -54,6 +57,10 @@ map k gk
 "imap <Left> <NOP>
 "imap <Right> <NOP>
 
+let g:goyo_width = 70
+let g:limelight_conceal_ctermfg = 240
+let g:limelight_default_coefficient = 0.9
+
 let g:syntastic_html_tidy_exec = 'tidy5'
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
@@ -70,6 +77,9 @@ if has("autocmd")
     \ endif 
 
   autocmd BufEnter * let &titlestring = expand("%:t") . " :: vim"
+
+  autocmd! User GoyoEnter Limelight
+  autocmd! User GoyoLeave Limelight!
 endif
 
 " python
