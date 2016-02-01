@@ -23,6 +23,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'digitaltoad/vim-jade'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+Plug 'keith/swift.vim'
 
 call plug#end() 
 
