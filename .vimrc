@@ -47,6 +47,9 @@ set encoding=UTF-8
 set fileencodings=UTF-8
 set backspace=eol,start,indent
 
+"If tabstop settings does not work, check by 
+"":verbose set tabstop sw softtabstop expandtab"
+
 map j gj
 map k gk
 "map <Up> <NOP>
