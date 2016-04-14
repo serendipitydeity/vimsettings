@@ -24,6 +24,7 @@ Plug 'digitaltoad/vim-jade'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'keith/swift.vim'
+Plug 'elzr/vim-json'
 
 call plug#end() 
 
