@@ -13,6 +13,9 @@ Run *./setup.sh* to install the plugins
 4. **vim-snipmate** : inc(tab) => #include <stdio.h>, main(tab) => int main(int argc, const char * argv[])... 등등으로 IDE에서나 볼 수 있던 고급 auto-completion 기능을 vim에서도! (vim-snippets에 auto-completion 리스트가 있음)
 5. **syntastic** : 소스를 저장하면 대충 컴파일해봐서 어디에 신택스 에러가 있는지 보여줌. Visual Studio의 IntelliSense같은 기능
 6. **restore_view** : 마지막으로 있었던 커서의 위치와 fold 된 코드를 자동으로 저장해줌 
+7. **nerdtree** : 탐색기
+8. **goyo** : iA Writer 같은 플러그인. :Goyo 로 시작
+9. **limelight** : 문단별 하일라이팅 
 
 # Syntax Files
 
@@ -26,6 +29,10 @@ Run *./setup.sh* to install the plugins
 8. **vim-coffee-script** : CoffeeScript
 9. **vim-javascript** : JavaScript
 10. **vim-ruby** : Ruby
+11. **vim-glsl** : OpenGL
+12. **vim-jade** : Jade
+13. **swift** : Swift
+14. **vim-json** : JSON
 
 # Dependencies
 1. **tlib_vim** : Snipmate에 필요
