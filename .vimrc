@@ -25,6 +25,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'keith/swift.vim'
 Plug 'elzr/vim-json'
+Plug 'leafgarland/typescript-vim'
 
 call plug#end() 
 

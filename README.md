@@ -33,6 +33,7 @@ Run *./setup.sh* to install the plugins
 12. **vim-jade** : Jade
 13. **swift** : Swift
 14. **vim-json** : JSON
+15. **typescript-vim** : TypeScript
 
 # Dependencies
 1. **tlib_vim** : Snipmate에 필요
