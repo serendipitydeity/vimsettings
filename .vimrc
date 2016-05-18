@@ -105,3 +105,7 @@ au Bufenter *.js map <F5> :!node %<CR>
 
 "md (requires grip, install it by `pip install grip`)
 au Bufenter *.md map <F5> :!grip --gfm % 0.0.0.0:8080<CR>
+
+if $TERM == 'xterm' " if putty
+  colorscheme evening 
+endif
