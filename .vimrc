@@ -26,6 +26,10 @@ Plug 'junegunn/limelight.vim'
 Plug 'keith/swift.vim'
 Plug 'elzr/vim-json'
 Plug 'leafgarland/typescript-vim'
+Plug 'vim-scripts/groovy.vim'
+Plug 'tfnico/vim-gradle'
+Plug 'mxw/vim-jsx'
+
 
 call plug#end() 
 
