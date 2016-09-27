@@ -110,6 +110,9 @@ au Bufenter *.rb map <F5> :!ruby %<CR>
 " js
 au Bufenter *.js map <F5> :!node %<CR>
 
+" Makefile <F6>
+map <F6> :!make<CR>
+
 " md (requires grip, install it by `pip install grip`)
 au Bufenter *.md map <F5> :!grip --gfm % 0.0.0.0:8080<CR>
 
