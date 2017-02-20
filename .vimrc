@@ -29,7 +29,8 @@ Plug 'leafgarland/typescript-vim'
 Plug 'vim-scripts/groovy.vim'
 Plug 'tfnico/vim-gradle'
 Plug 'mxw/vim-jsx'
-
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'w0rp/ale'
 
 call plug#end() 
 
@@ -52,6 +53,7 @@ set softtabstop=2
 set encoding=UTF-8
 set fileencodings=UTF-8
 set backspace=eol,start,indent
+set mouse=a
 
 "If tabstop settings does not work, check by 
 "":verbose set tabstop sw softtabstop expandtab"
