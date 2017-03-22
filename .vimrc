@@ -1,7 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'jiangmiao/auto-pairs'
-Plug 'scrooloose/syntastic'
 Plug 'kchmck/vim-coffee-script'
 Plug 'scrooloose/nerdcommenter'
 Plug 'groenewege/vim-less'
@@ -39,7 +38,6 @@ filetype indent plugin on
 set nocompatible
 set title
 set ruler
-set number
 set esckeys
 set hlsearch
 set showmode
