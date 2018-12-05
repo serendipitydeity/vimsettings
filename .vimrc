@@ -27,8 +27,8 @@ Plug 'elzr/vim-json'
 Plug 'leafgarland/typescript-vim'
 Plug 'vim-scripts/groovy.vim'
 Plug 'tfnico/vim-gradle'
+Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'mxw/vim-jsx'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'w0rp/ale'
 
 call plug#end() 
